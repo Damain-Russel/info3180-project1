@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1 class="page-header">List of Profiles</h1>
+{% for user in users %}
+<div class="row">
+	<div class="span2">
+		<img src= {{ url_for('uploaded_file', filename = user.profile_photo) }} alt = "{{ user.username }} Profile Photo" class="img-rounded">
+	</div>
+	<div class="span4">
+		<blockquote>
+			<strong><h1>{{ user.first_name }} {{ user.last_name }} </h1></strong>
+			<small> <a href="profile/{{user.username}}"> View Profile </a> </small>
+			<small> <a href="api/{{user.username}}"> Get JSON Object </a> </small>
+		</blockquote>
+	</div>
+</div>
+<hr />
+{% else %}
+<p><strong>No users found</strong></p>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1 class="page-header">Profile Informaton</h1>
+
+<div class="row">
+	<div class="span2">
+		<img src = {{ url_for('uploaded_file', filename = user.profile_photo) }}  alt="" class="img-rounded">
+	</div>
+	<div class="span4">
+		<blockquote>
+			<strong><h1>{{ user.first_name }} {{ user.last_name }}</h1></strong>
+			<small><strong>Profile created on: </strong> {{ user.username }}</small>
+			<small> <a href="api/{{user.username}}"> Get JSON Object </a> </small>
+		</blockquote>
+		<p>
+			<strong>Username: </strong> {{ user.username }} <br />
+			<strong>User ID: </strong> {{ user.id }}<br />
+			<strong>Gender: </strong> 
+			{%- if user.gender | int == 1 -%}
+			Female
+			{%- else -%}
+			Male
+			{% endif %}<br />
+			<strong>Age: </strong> {{ user.age }}
+		</p>
+		<br />
+		<br />
+		<p>
+			{{ user.bio }}
+		</p>
+	</div>
+</div>
+
+
+{% endblock %}

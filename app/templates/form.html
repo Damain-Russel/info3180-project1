@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1 class="page-header">User Registration Form</h1>
+{% include 'flash_messages.html' %}
+<form action="/profile" method="POST" enctype="multipart/form-data">
+	{{ form.hidden_tag() }}
+	{{ form.csrf_token }}
+	<div class="form-group">
+		<label for="firstname">{{ form.firstname.label }}</label>
+		{{ form.firstname(size=30, class_="form-control input") }}
+	</div>
+	<div class="form-group">
+		<label for="lastname">{{ form.lastname.label }}</label>
+		{{ form.lastname(size=30, class_="form-control input") }}
+	</div>
+	<div class="form-group">
+		<label for="username">{{ form.username.label }}e</label>
+		{{ form.username(size=30, class_="form-control input") }}
+	</div>
+	<div class="form-group">
+		<label for="age" class="col-2 col-form-label">{{ form.age.label }}</label>
+		<div class="col-10">
+			{{ form.age(size=30, class_="form-control input") }}
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="bio">{{ form.bio.label }}</label>
+		{{ form.bio(class_="form-control") }}
+	</div>
+	<div class="form-group">
+		<label for="gender">{{ form.gender.label }}</label>
+		{{ form.gender(class_="form-control") }}
+	</div>
+	<div class="form-group">
+		<label for="file-upload" class="custom-file-upload">
+			<i class="fa fa-cloud-upload"></i> {{ form.image.label }}
+		</label>
+		{{ form.image }}
+	</div>
+	<div class="form-group">
+		<label for="password">{{ form.password.label }}</label>
+		{{ form.password(size=30, class_="form-control input") }}
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

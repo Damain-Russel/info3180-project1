@@ -1,0 +1,41 @@
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	/* Margin bottom by footer height */
+	margin-top: 60px;
+	margin-bottom: 150px;
+}
+.row{
+	padding-bottom: 30px;
+}
+.footer-logo img{
+	width: 25px;
+	height: 29px;
+}
+
+.form-control.input{
+	padding: 20px;
+}
+
+input[type="file"] {
+	display: none;
+}
+.custom-file-upload {
+	border: 1px solid #ccc;
+	display: inline-block;
+	padding: 6px 12px;
+	cursor: pointer;
+}
+
+.footer {
+	margin: 0px auto;
+	padding: 10px;
+	text-align: center;
+	background-color: #272626;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
