@@ -10,7 +10,7 @@
 	<div class="span4">
 		<blockquote>
 			<strong><h1>{{ user.first_name }} {{ user.last_name }}</h1></strong>
-			<small><strong>Profile created on: </strong> {{ user.username }}</small>
+			<small><strong>Profile created on: </strong> {{ user.date_created }}</small>
 			<small> <a href="api/{{user.username}}"> Get JSON Object </a> </small>
 		</blockquote>
 		<p>
